@@ -40,7 +40,6 @@ module.exports = {
     800: '#708c00',
     900: '#5e7600',
   },
-  black: '#1d1d1b',
   peach: {
     DEFAULT: '#ED9C70',
     50: '#FCF1EA',

@@ -4,11 +4,15 @@
 
 @layer base {
   html {
-    @apply bg-white text-violet-800 font-body;
+    @apply bg-white text-violet-800;
   }
 
   html.dark {
     @apply bg-violet-900 text-white;
+  }
+
+  body {
+    @apply font-body;
   }
 
   h1,

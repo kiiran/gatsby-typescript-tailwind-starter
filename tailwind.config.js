@@ -10,8 +10,12 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     fontFamily: {
-      display: ['Manrope', ...tailwindDefaults.fontFamily.sans],
-      body: ['Lora', ...tailwindDefaults.fontFamily.serif],
+      display: [
+        'ManropeVariable',
+        'Manrope',
+        ...tailwindDefaults.fontFamily.sans,
+      ],
+      body: ['LoraVariable', 'Lora', ...tailwindDefaults.fontFamily.serif],
     },
     extend: {
       colors,
