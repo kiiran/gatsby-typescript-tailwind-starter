@@ -49,7 +49,7 @@ const BlogIndex: GatsbyPage<BlogIndexQuery> = ({ data }) => {
                       <span itemProp="headline">{title}</span>
                     )}
                   </h2>
-                  <small className="block text-xs text-primary-700 dark:text-primary-200">
+                  <small className="block text-xs font-semibold text-primary-700 dark:text-primary-200">
                     {post.frontmatter?.date}
                   </small>
                 </header>
