@@ -20,7 +20,7 @@
     "dev": "run-p develop codegen:watch",
     "codegen": "graphql-codegen --config graphql-codegen.yml",
     "codegen:watch": "npm run codegen -- --watch src/**/*.{ts,tsx} --silent",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "lint": "eslint ./*.js src --ext js,ts,tsx --fix --quiet",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -50,6 +50,7 @@
     "prismjs": "^1.23.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-feather": "^2.0.9",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {

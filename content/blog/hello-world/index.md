@@ -23,8 +23,21 @@ Oh, and here's a great quote from this Wikipedia on
 
 You can also write code blocks here!
 
-```js
+```tsx{4}
 const saltyDuckEgg = 'chinese preserved food product'
+
+type EggProps = {
+  variety: 'chicken' | 'duck'
+  salty?: boolean
+}
+
+const Egg: React.FC<EggProps> = ({ salty, variety }) => {
+  return (
+    <div className={`egg-${salty ? 'salty' : 'not-salty'}`}>
+      {`${variety} egg`}
+    </div>
+  )
+}
 ```
 
 | Number | Title                                    | Year |

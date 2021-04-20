@@ -46,7 +46,7 @@ const SEO: React.FC<SEOProps> = ({
 
   return (
     <Helmet
-      htmlAttributes={{ lang, class: 'dark' }}
+      htmlAttributes={{ lang }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
       meta={[

@@ -4,15 +4,15 @@
 
 @layer base {
   html {
-    @apply bg-white text-violet-800;
+    @apply bg-white text-blueGray-800;
   }
 
   html.dark {
-    @apply bg-violet-900 text-white;
+    @apply bg-blueGray-800 text-white;
   }
 
   body {
-    @apply font-body;
+    @apply font-body transition-colors duration-300;
   }
 
   h1,
@@ -21,15 +21,14 @@
   h4,
   h5,
   h6 {
-    @apply font-display font-bold; 
+    @apply font-display font-bold;
   }
-
 
   a {
-    @apply chunky-underline-violet-200 no-underline;
+    @apply chunky-underline-primary-100 no-underline;
   }
-  
+
   html.dark a {
-    @apply chunky-underline-violet-700;
+    @apply chunky-underline-primary-800;
   }
 }
