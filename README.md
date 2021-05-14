@@ -26,7 +26,7 @@ This starter is a clone of the [Gatsby blog starter](https://github.com/gatsbyjs
 
     ```shell
     cd my-blog-starter/
-    gatsby develop
+    npm run dev
     ```
 
 1.  **Open the source code and start editing!**
