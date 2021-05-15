@@ -26,7 +26,10 @@ blocks:
             - npm run lint
         - name: Type-check
           commands:
-            - npm run typecheck --if-present
+            - npm run typecheck
+        - name: Build
+          commands:
+            - npm run build
       prologue:
         commands:
           - checkout
