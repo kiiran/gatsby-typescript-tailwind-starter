@@ -159,10 +159,25 @@ export type DirectoryConnection = {
   nodes: Array<Directory>
   pageInfo: PageInfo
   distinct: Array<Scalars['String']>
+  max?: Maybe<Scalars['Float']>
+  min?: Maybe<Scalars['Float']>
+  sum?: Maybe<Scalars['Float']>
   group: Array<DirectoryGroupConnection>
 }
 
 export type DirectoryConnectionDistinctArgs = {
+  field: DirectoryFieldsEnum
+}
+
+export type DirectoryConnectionMaxArgs = {
+  field: DirectoryFieldsEnum
+}
+
+export type DirectoryConnectionMinArgs = {
+  field: DirectoryFieldsEnum
+}
+
+export type DirectoryConnectionSumArgs = {
   field: DirectoryFieldsEnum
 }
 
@@ -475,10 +490,25 @@ export type FileConnection = {
   nodes: Array<File>
   pageInfo: PageInfo
   distinct: Array<Scalars['String']>
+  max?: Maybe<Scalars['Float']>
+  min?: Maybe<Scalars['Float']>
+  sum?: Maybe<Scalars['Float']>
   group: Array<FileGroupConnection>
 }
 
 export type FileConnectionDistinctArgs = {
+  field: FileFieldsEnum
+}
+
+export type FileConnectionMaxArgs = {
+  field: FileFieldsEnum
+}
+
+export type FileConnectionMinArgs = {
+  field: FileFieldsEnum
+}
+
+export type FileConnectionSumArgs = {
   field: FileFieldsEnum
 }
 
@@ -1113,10 +1143,25 @@ export type ImageSharpConnection = {
   nodes: Array<ImageSharp>
   pageInfo: PageInfo
   distinct: Array<Scalars['String']>
+  max?: Maybe<Scalars['Float']>
+  min?: Maybe<Scalars['Float']>
+  sum?: Maybe<Scalars['Float']>
   group: Array<ImageSharpGroupConnection>
 }
 
 export type ImageSharpConnectionDistinctArgs = {
+  field: ImageSharpFieldsEnum
+}
+
+export type ImageSharpConnectionMaxArgs = {
+  field: ImageSharpFieldsEnum
+}
+
+export type ImageSharpConnectionMinArgs = {
+  field: ImageSharpFieldsEnum
+}
+
+export type ImageSharpConnectionSumArgs = {
   field: ImageSharpFieldsEnum
 }
 
@@ -1494,10 +1539,25 @@ export type MarkdownRemarkConnection = {
   nodes: Array<MarkdownRemark>
   pageInfo: PageInfo
   distinct: Array<Scalars['String']>
+  max?: Maybe<Scalars['Float']>
+  min?: Maybe<Scalars['Float']>
+  sum?: Maybe<Scalars['Float']>
   group: Array<MarkdownRemarkGroupConnection>
 }
 
 export type MarkdownRemarkConnectionDistinctArgs = {
+  field: MarkdownRemarkFieldsEnum
+}
+
+export type MarkdownRemarkConnectionMaxArgs = {
+  field: MarkdownRemarkFieldsEnum
+}
+
+export type MarkdownRemarkConnectionMinArgs = {
+  field: MarkdownRemarkFieldsEnum
+}
+
+export type MarkdownRemarkConnectionSumArgs = {
   field: MarkdownRemarkFieldsEnum
 }
 
@@ -1732,6 +1792,8 @@ export type Query = {
   allDirectory: DirectoryConnection
   site?: Maybe<Site>
   allSite: SiteConnection
+  siteFunction?: Maybe<SiteFunction>
+  allSiteFunction: SiteFunctionConnection
   sitePage?: Maybe<SitePage>
   allSitePage: SitePageConnection
   markdownRemark?: Maybe<MarkdownRemark>
@@ -1863,6 +1925,25 @@ export type QueryAllSiteArgs = {
   limit?: Maybe<Scalars['Int']>
 }
 
+export type QuerySiteFunctionArgs = {
+  apiRoute?: Maybe<StringQueryOperatorInput>
+  originalFilePath?: Maybe<StringQueryOperatorInput>
+  relativeCompiledFilePath?: Maybe<StringQueryOperatorInput>
+  absoluteCompiledFilePath?: Maybe<StringQueryOperatorInput>
+  matchPath?: Maybe<StringQueryOperatorInput>
+  id?: Maybe<StringQueryOperatorInput>
+  parent?: Maybe<NodeFilterInput>
+  children?: Maybe<NodeFilterListInput>
+  internal?: Maybe<InternalFilterInput>
+}
+
+export type QueryAllSiteFunctionArgs = {
+  filter?: Maybe<SiteFunctionFilterInput>
+  sort?: Maybe<SiteFunctionSortInput>
+  skip?: Maybe<Scalars['Int']>
+  limit?: Maybe<Scalars['Int']>
+}
+
 export type QuerySitePageArgs = {
   path?: Maybe<StringQueryOperatorInput>
   component?: Maybe<StringQueryOperatorInput>
@@ -1877,7 +1958,6 @@ export type QuerySitePageArgs = {
   context?: Maybe<SitePageContextFilterInput>
   pluginCreator?: Maybe<SitePluginFilterInput>
   pluginCreatorId?: Maybe<StringQueryOperatorInput>
-  componentPath?: Maybe<StringQueryOperatorInput>
 }
 
 export type QueryAllSitePageArgs = {
@@ -2011,10 +2091,25 @@ export type SiteBuildMetadataConnection = {
   nodes: Array<SiteBuildMetadata>
   pageInfo: PageInfo
   distinct: Array<Scalars['String']>
+  max?: Maybe<Scalars['Float']>
+  min?: Maybe<Scalars['Float']>
+  sum?: Maybe<Scalars['Float']>
   group: Array<SiteBuildMetadataGroupConnection>
 }
 
 export type SiteBuildMetadataConnectionDistinctArgs = {
+  field: SiteBuildMetadataFieldsEnum
+}
+
+export type SiteBuildMetadataConnectionMaxArgs = {
+  field: SiteBuildMetadataFieldsEnum
+}
+
+export type SiteBuildMetadataConnectionMinArgs = {
+  field: SiteBuildMetadataFieldsEnum
+}
+
+export type SiteBuildMetadataConnectionSumArgs = {
   field: SiteBuildMetadataFieldsEnum
 }
 
@@ -2148,10 +2243,25 @@ export type SiteConnection = {
   nodes: Array<Site>
   pageInfo: PageInfo
   distinct: Array<Scalars['String']>
+  max?: Maybe<Scalars['Float']>
+  min?: Maybe<Scalars['Float']>
+  sum?: Maybe<Scalars['Float']>
   group: Array<SiteGroupConnection>
 }
 
 export type SiteConnectionDistinctArgs = {
+  field: SiteFieldsEnum
+}
+
+export type SiteConnectionMaxArgs = {
+  field: SiteFieldsEnum
+}
+
+export type SiteConnectionMinArgs = {
+  field: SiteFieldsEnum
+}
+
+export type SiteConnectionSumArgs = {
   field: SiteFieldsEnum
 }
 
@@ -2280,6 +2390,178 @@ export type SiteFilterInput = {
   internal?: Maybe<InternalFilterInput>
 }
 
+export type SiteFunction = Node & {
+  apiRoute: Scalars['String']
+  originalFilePath: Scalars['String']
+  relativeCompiledFilePath: Scalars['String']
+  absoluteCompiledFilePath: Scalars['String']
+  matchPath?: Maybe<Scalars['String']>
+  id: Scalars['ID']
+  parent?: Maybe<Node>
+  children: Array<Node>
+  internal: Internal
+}
+
+export type SiteFunctionConnection = {
+  totalCount: Scalars['Int']
+  edges: Array<SiteFunctionEdge>
+  nodes: Array<SiteFunction>
+  pageInfo: PageInfo
+  distinct: Array<Scalars['String']>
+  max?: Maybe<Scalars['Float']>
+  min?: Maybe<Scalars['Float']>
+  sum?: Maybe<Scalars['Float']>
+  group: Array<SiteFunctionGroupConnection>
+}
+
+export type SiteFunctionConnectionDistinctArgs = {
+  field: SiteFunctionFieldsEnum
+}
+
+export type SiteFunctionConnectionMaxArgs = {
+  field: SiteFunctionFieldsEnum
+}
+
+export type SiteFunctionConnectionMinArgs = {
+  field: SiteFunctionFieldsEnum
+}
+
+export type SiteFunctionConnectionSumArgs = {
+  field: SiteFunctionFieldsEnum
+}
+
+export type SiteFunctionConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>
+  limit?: Maybe<Scalars['Int']>
+  field: SiteFunctionFieldsEnum
+}
+
+export type SiteFunctionEdge = {
+  next?: Maybe<SiteFunction>
+  node: SiteFunction
+  previous?: Maybe<SiteFunction>
+}
+
+export enum SiteFunctionFieldsEnum {
+  apiRoute = 'apiRoute',
+  originalFilePath = 'originalFilePath',
+  relativeCompiledFilePath = 'relativeCompiledFilePath',
+  absoluteCompiledFilePath = 'absoluteCompiledFilePath',
+  matchPath = 'matchPath',
+  id = 'id',
+  parent___id = 'parent___id',
+  parent___parent___id = 'parent___parent___id',
+  parent___parent___parent___id = 'parent___parent___parent___id',
+  parent___parent___parent___children = 'parent___parent___parent___children',
+  parent___parent___children = 'parent___parent___children',
+  parent___parent___children___id = 'parent___parent___children___id',
+  parent___parent___children___children = 'parent___parent___children___children',
+  parent___parent___internal___content = 'parent___parent___internal___content',
+  parent___parent___internal___contentDigest = 'parent___parent___internal___contentDigest',
+  parent___parent___internal___description = 'parent___parent___internal___description',
+  parent___parent___internal___fieldOwners = 'parent___parent___internal___fieldOwners',
+  parent___parent___internal___ignoreType = 'parent___parent___internal___ignoreType',
+  parent___parent___internal___mediaType = 'parent___parent___internal___mediaType',
+  parent___parent___internal___owner = 'parent___parent___internal___owner',
+  parent___parent___internal___type = 'parent___parent___internal___type',
+  parent___children = 'parent___children',
+  parent___children___id = 'parent___children___id',
+  parent___children___parent___id = 'parent___children___parent___id',
+  parent___children___parent___children = 'parent___children___parent___children',
+  parent___children___children = 'parent___children___children',
+  parent___children___children___id = 'parent___children___children___id',
+  parent___children___children___children = 'parent___children___children___children',
+  parent___children___internal___content = 'parent___children___internal___content',
+  parent___children___internal___contentDigest = 'parent___children___internal___contentDigest',
+  parent___children___internal___description = 'parent___children___internal___description',
+  parent___children___internal___fieldOwners = 'parent___children___internal___fieldOwners',
+  parent___children___internal___ignoreType = 'parent___children___internal___ignoreType',
+  parent___children___internal___mediaType = 'parent___children___internal___mediaType',
+  parent___children___internal___owner = 'parent___children___internal___owner',
+  parent___children___internal___type = 'parent___children___internal___type',
+  parent___internal___content = 'parent___internal___content',
+  parent___internal___contentDigest = 'parent___internal___contentDigest',
+  parent___internal___description = 'parent___internal___description',
+  parent___internal___fieldOwners = 'parent___internal___fieldOwners',
+  parent___internal___ignoreType = 'parent___internal___ignoreType',
+  parent___internal___mediaType = 'parent___internal___mediaType',
+  parent___internal___owner = 'parent___internal___owner',
+  parent___internal___type = 'parent___internal___type',
+  children = 'children',
+  children___id = 'children___id',
+  children___parent___id = 'children___parent___id',
+  children___parent___parent___id = 'children___parent___parent___id',
+  children___parent___parent___children = 'children___parent___parent___children',
+  children___parent___children = 'children___parent___children',
+  children___parent___children___id = 'children___parent___children___id',
+  children___parent___children___children = 'children___parent___children___children',
+  children___parent___internal___content = 'children___parent___internal___content',
+  children___parent___internal___contentDigest = 'children___parent___internal___contentDigest',
+  children___parent___internal___description = 'children___parent___internal___description',
+  children___parent___internal___fieldOwners = 'children___parent___internal___fieldOwners',
+  children___parent___internal___ignoreType = 'children___parent___internal___ignoreType',
+  children___parent___internal___mediaType = 'children___parent___internal___mediaType',
+  children___parent___internal___owner = 'children___parent___internal___owner',
+  children___parent___internal___type = 'children___parent___internal___type',
+  children___children = 'children___children',
+  children___children___id = 'children___children___id',
+  children___children___parent___id = 'children___children___parent___id',
+  children___children___parent___children = 'children___children___parent___children',
+  children___children___children = 'children___children___children',
+  children___children___children___id = 'children___children___children___id',
+  children___children___children___children = 'children___children___children___children',
+  children___children___internal___content = 'children___children___internal___content',
+  children___children___internal___contentDigest = 'children___children___internal___contentDigest',
+  children___children___internal___description = 'children___children___internal___description',
+  children___children___internal___fieldOwners = 'children___children___internal___fieldOwners',
+  children___children___internal___ignoreType = 'children___children___internal___ignoreType',
+  children___children___internal___mediaType = 'children___children___internal___mediaType',
+  children___children___internal___owner = 'children___children___internal___owner',
+  children___children___internal___type = 'children___children___internal___type',
+  children___internal___content = 'children___internal___content',
+  children___internal___contentDigest = 'children___internal___contentDigest',
+  children___internal___description = 'children___internal___description',
+  children___internal___fieldOwners = 'children___internal___fieldOwners',
+  children___internal___ignoreType = 'children___internal___ignoreType',
+  children___internal___mediaType = 'children___internal___mediaType',
+  children___internal___owner = 'children___internal___owner',
+  children___internal___type = 'children___internal___type',
+  internal___content = 'internal___content',
+  internal___contentDigest = 'internal___contentDigest',
+  internal___description = 'internal___description',
+  internal___fieldOwners = 'internal___fieldOwners',
+  internal___ignoreType = 'internal___ignoreType',
+  internal___mediaType = 'internal___mediaType',
+  internal___owner = 'internal___owner',
+  internal___type = 'internal___type',
+}
+
+export type SiteFunctionFilterInput = {
+  apiRoute?: Maybe<StringQueryOperatorInput>
+  originalFilePath?: Maybe<StringQueryOperatorInput>
+  relativeCompiledFilePath?: Maybe<StringQueryOperatorInput>
+  absoluteCompiledFilePath?: Maybe<StringQueryOperatorInput>
+  matchPath?: Maybe<StringQueryOperatorInput>
+  id?: Maybe<StringQueryOperatorInput>
+  parent?: Maybe<NodeFilterInput>
+  children?: Maybe<NodeFilterListInput>
+  internal?: Maybe<InternalFilterInput>
+}
+
+export type SiteFunctionGroupConnection = {
+  totalCount: Scalars['Int']
+  edges: Array<SiteFunctionEdge>
+  nodes: Array<SiteFunction>
+  pageInfo: PageInfo
+  field: Scalars['String']
+  fieldValue?: Maybe<Scalars['String']>
+}
+
+export type SiteFunctionSortInput = {
+  fields?: Maybe<Array<Maybe<SiteFunctionFieldsEnum>>>
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>
+}
+
 export type SiteGroupConnection = {
   totalCount: Scalars['Int']
   edges: Array<SiteEdge>
@@ -2303,7 +2585,6 @@ export type SitePage = Node & {
   context?: Maybe<SitePageContext>
   pluginCreator?: Maybe<SitePlugin>
   pluginCreatorId?: Maybe<Scalars['String']>
-  componentPath?: Maybe<Scalars['String']>
 }
 
 export type SitePageConnection = {
@@ -2312,10 +2593,25 @@ export type SitePageConnection = {
   nodes: Array<SitePage>
   pageInfo: PageInfo
   distinct: Array<Scalars['String']>
+  max?: Maybe<Scalars['Float']>
+  min?: Maybe<Scalars['Float']>
+  sum?: Maybe<Scalars['Float']>
   group: Array<SitePageGroupConnection>
 }
 
 export type SitePageConnectionDistinctArgs = {
+  field: SitePageFieldsEnum
+}
+
+export type SitePageConnectionMaxArgs = {
+  field: SitePageFieldsEnum
+}
+
+export type SitePageConnectionMinArgs = {
+  field: SitePageFieldsEnum
+}
+
+export type SitePageConnectionSumArgs = {
   field: SitePageFieldsEnum
 }
 
@@ -2535,7 +2831,6 @@ export enum SitePageFieldsEnum {
   pluginCreator___packageJson___peerDependencies___version = 'pluginCreator___packageJson___peerDependencies___version',
   pluginCreator___packageJson___keywords = 'pluginCreator___packageJson___keywords',
   pluginCreatorId = 'pluginCreatorId',
-  componentPath = 'componentPath',
 }
 
 export type SitePageFilterInput = {
@@ -2552,7 +2847,6 @@ export type SitePageFilterInput = {
   context?: Maybe<SitePageContextFilterInput>
   pluginCreator?: Maybe<SitePluginFilterInput>
   pluginCreatorId?: Maybe<StringQueryOperatorInput>
-  componentPath?: Maybe<StringQueryOperatorInput>
 }
 
 export type SitePageGroupConnection = {
@@ -2591,10 +2885,25 @@ export type SitePluginConnection = {
   nodes: Array<SitePlugin>
   pageInfo: PageInfo
   distinct: Array<Scalars['String']>
+  max?: Maybe<Scalars['Float']>
+  min?: Maybe<Scalars['Float']>
+  sum?: Maybe<Scalars['Float']>
   group: Array<SitePluginGroupConnection>
 }
 
 export type SitePluginConnectionDistinctArgs = {
+  field: SitePluginFieldsEnum
+}
+
+export type SitePluginConnectionMaxArgs = {
+  field: SitePluginFieldsEnum
+}
+
+export type SitePluginConnectionMinArgs = {
+  field: SitePluginFieldsEnum
+}
+
+export type SitePluginConnectionSumArgs = {
   field: SitePluginFieldsEnum
 }
 
@@ -3131,6 +3440,7 @@ export type GatsbyImageSharpFluid_WithWebp_NoBase64Fragment = Pick<
 export type PagesQueryQueryVariables = Exact<{ [key: string]: never }>
 
 export type PagesQueryQuery = {
+  allSiteFunction: { nodes: Array<Pick<SiteFunction, 'apiRoute'>> }
   allSitePage: { nodes: Array<Pick<SitePage, 'path'>> }
 }
 
