@@ -24,7 +24,7 @@ This starter is a clone of the [Gatsby blog starter](https://github.com/gatsbyjs
     Use the Gatsby CLI to create a new site, specifying this blog starter as the template.
 
     ```shell
-    gatsby new my-blog-starter https://github.com/kiiran/gatsby-typescript-hybrid-starter
+    gatsby new my-blog-starter https://github.com/kiiran/gatsby-typescript-tailwind-starter
     ```
 
 1.  **Start developing.**
