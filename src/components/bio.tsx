@@ -31,9 +31,9 @@ const Bio: React.FC = () => {
   const author = metadata?.author
 
   return (
-    <div className="flex mx-auto max-w-screen-sm space-x-2">
+    <div className="flex mx-auto space-x-2 max-w-screen-sm">
       <StaticImage
-        className="rounded-full h-12 w-12 flex-shrink-0"
+        className="flex-shrink-0 w-12 h-12 rounded-full"
         layout="fixed"
         formats={['auto', 'webp', 'avif']}
         src="../images/profile-pic.png"

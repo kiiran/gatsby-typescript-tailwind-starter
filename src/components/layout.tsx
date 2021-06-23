@@ -46,17 +46,17 @@ const Layout: React.FC<LayoutProps> = ({ location, children }) => {
 
   return (
     <div
-      className="flex flex-col min-h-screen p-4"
+      className="flex flex-col p-4 min-h-screen"
       data-is-root-path={isRootPath}
     >
-      <header className="flex justify-between w-full max-w-screen-sm mx-auto my-8 text-2xl space-x-2">
+      <header className="flex justify-between my-8 mx-auto space-x-2 w-full max-w-screen-sm text-2xl">
         {header}
         <ThemeToggle />
       </header>
-      <main className="flex-grow w-full max-w-screen-sm mx-auto">
+      <main className="flex-grow mx-auto w-full max-w-screen-sm">
         {children}
       </main>
-      <footer className="max-w-screen-sm mx-auto mt-6">
+      <footer className="mx-auto mt-6 max-w-screen-sm">
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>

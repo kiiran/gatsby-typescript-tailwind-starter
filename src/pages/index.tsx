@@ -27,7 +27,7 @@ const BlogIndex: GatsbyPage<BlogIndexQuery> = ({ data }) => {
     <>
       <SEO title="All posts" />
       <Bio />
-      <ol className="max-w-screen-sm mx-auto list-none my-8 space-y-8">
+      <ol className="my-8 mx-auto space-y-8 max-w-screen-sm list-none">
         {posts.map((post) => {
           const title = post.frontmatter?.title || post.fields?.slug
           const link = post.fields?.slug
@@ -40,7 +40,7 @@ const BlogIndex: GatsbyPage<BlogIndexQuery> = ({ data }) => {
                 itemType="http://schema.org/Article"
               >
                 <header className="space-y-2">
-                  <h2 className="text-xl md:text-2xl font-bold inline chunky-underline-primary-100 dark:chunky-underline-primary-800">
+                  <h2 className="inline text-xl md:text-2xl font-bold chunky-underline-primary-100 dark:chunky-underline-primary-800">
                     {link ? (
                       <Link to={link} itemProp="url">
                         <span itemProp="headline">{title}</span>

@@ -17,7 +17,7 @@ export const ThemeToggle: React.FC = () => {
       <Helmet htmlAttributes={{ class: isDarkMode ? 'dark' : 'light' }} />
       <button
         title="Toggle dark mode"
-        className="flex justify-center items-center h-12 w-12 rounded"
+        className="flex justify-center items-center w-12 h-12 rounded"
         onClick={() => setDarkMode((x) => !x)}
         type="button"
       >

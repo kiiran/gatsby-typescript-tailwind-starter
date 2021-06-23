@@ -12,6 +12,7 @@ module.exports = {
     // 'plugin:import/errors',
     // 'plugin:import/warnings',
     'plugin:import/typescript',
+    'plugin:tailwindcss/recommended',
   ],
   plugins: [
     'import',
@@ -20,6 +21,7 @@ module.exports = {
     'react-hooks',
     'testing-library',
     'simple-import-sort',
+    'tailwindcss',
   ],
   parserOptions: {
     ecmaVersion: 2019,
@@ -111,6 +113,9 @@ module.exports = {
   settings: {
     react: {
       version: 'detect',
+    },
+    tailwindcss: {
+      whitelist: ['chunky-underline-\\w+-\\d{2,3}'],
     },
   },
 }

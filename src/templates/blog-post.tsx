@@ -17,12 +17,12 @@ const BlogPostTemplate: GatsbyPage<BlogPostBySlugQuery> = ({ data }) => {
         description={post.frontmatter?.description || post.excerpt || undefined}
       />
       <article
-        className="space-y-6 mb-6"
+        className="mb-6 space-y-6"
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header className="prose dark:prose-dark mx-auto">
-          <h1 className="text-3xl font-bold mb-4" itemProp="headline">
+        <header className="mx-auto prose dark:prose-dark">
+          <h1 className="mb-4 text-3xl font-bold" itemProp="headline">
             {post.frontmatter?.title}
           </h1>
           <p className="text-sm font-semibold text-primary-800 dark:text-primary-200">
@@ -30,17 +30,17 @@ const BlogPostTemplate: GatsbyPage<BlogPostBySlugQuery> = ({ data }) => {
           </p>
         </header>
         <section
-          className="prose dark:prose-dark mx-auto"
+          className="mx-auto prose dark:prose-dark"
           dangerouslySetInnerHTML={{ __html: post.html || '' }}
           itemProp="articleBody"
         />
-        <hr className="bg-primary-50 h-px border-none mt-8" />
+        <hr className="mt-8 h-px bg-primary-50 border-none" />
         <footer className="py-4">
           <Bio />
         </footer>
       </article>
       <nav className="my-6">
-        <ul className="flex flex-wrap justify-between list-none p-0">
+        <ul className="flex flex-wrap justify-between p-0 list-none">
           {previous && previous.fields?.slug && (
             <li>
               <Link to={previous.fields.slug} rel="prev">
