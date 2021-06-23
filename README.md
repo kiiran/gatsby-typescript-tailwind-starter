@@ -1,14 +1,9 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
   Gatsby blog starter with Typescript + Tailwind
 </h1>
 
 This starter is a clone of the [Gatsby blog starter](https://github.com/gatsbyjs/gatsby-starter-blog), but with the following set up:
+
 - ✅ TypeScript and ESLint
 - 🏭 GraphQL code generation
 - 💅 Tailwind, with dark mode and [Tailwind Typography](https://tailwindcss-typography.netlify.app/)
