@@ -9,7 +9,7 @@ import * as React from 'react'
 import { Helmet, HelmetProps } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 
-import { SeoComponentQuery } from 'graphql/generated'
+import { SeoComponentQuery } from '~/graphql-types'
 
 type SEOProps = {
   description?: string

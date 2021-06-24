@@ -9,7 +9,7 @@ import * as React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
-import { BioQuery } from 'graphql/generated'
+import { BioQuery } from '~/graphql-types'
 
 const Bio: React.FC = () => {
   const data = useStaticQuery<BioQuery>(graphql`
@@ -30,6 +30,8 @@ const Bio: React.FC = () => {
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = metadata?.author
 
+  if (!author) return null
+
   return (
     <div className="flex mx-auto space-x-2 max-w-screen-sm">
       <StaticImage
@@ -42,10 +44,11 @@ const Bio: React.FC = () => {
         quality={95}
         alt="Profile picture"
       />
-      {author?.name && (
+      {author.name && (
         <div>
           <p>
-            Written by <strong>{author.name}</strong>, {author?.summary || null}
+            Written by <strong>{author.name}</strong>
+            {author.summary && `, ${author.summary}`}
           </p>
         </div>
       )}

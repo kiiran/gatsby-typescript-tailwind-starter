@@ -1,9 +1,10 @@
 import * as React from 'react'
 import { graphql, Link } from 'gatsby'
 
+import { BlogIndexQuery } from '~/graphql-types'
+
 import Bio from 'components/bio'
 import SEO from 'components/seo'
-import { BlogIndexQuery } from 'graphql/generated'
 import { GatsbyPage } from 'types/gatsby'
 
 const BlogIndex: GatsbyPage<BlogIndexQuery> = ({ data }) => {

@@ -80,6 +80,8 @@ module.exports = {
           ['^\\u0000'],
           // Packages. `react` and `gatsby` related packages come first.
           ['^react', '^gatsby', '^@?\\w'],
+          // Root-level imports
+          ['^~/.*'],
           // src folders
           [
             `^(${fs

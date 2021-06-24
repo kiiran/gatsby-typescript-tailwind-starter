@@ -1,9 +1,10 @@
 import * as React from 'react'
 import { graphql, Link } from 'gatsby'
 
+import { BlogPostBySlugQuery } from '~/graphql-types'
+
 import Bio from 'components/bio'
 import SEO from 'components/seo'
-import { BlogPostBySlugQuery } from 'graphql/generated'
 import { GatsbyPage } from 'types/gatsby'
 
 const BlogPostTemplate: GatsbyPage<BlogPostBySlugQuery> = ({ data }) => {

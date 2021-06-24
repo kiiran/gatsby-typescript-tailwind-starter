@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 
-import { LayoutQuery } from 'graphql/generated'
+import { LayoutQuery } from '~/graphql-types'
 
 import { ThemeToggle } from './ThemeToggle'
 
